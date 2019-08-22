@@ -1,5 +1,5 @@
 const processGatsbySiteUrl =
-  process.env.GATSBY_SITE_URL || 'https://gatsby-starter-boiler.netlify.com'
+  process.env.GATSBY_SITE_URL || 'https://carloszuniga.me'
 const processGatsbySiteUrlEnv = process.env.GATSBY_ENV || 'dev'
 
 const genRobotsPolicy = env => {
@@ -15,11 +15,14 @@ const genRobotsPolicy = env => {
 
 module.exports = {
   siteMetadata: {
-    title: 'Welcome to Gatsby Starter Boiler',
-    siteUrl:
-      process.env.GATSBY_SITE_URL ||
-      'https://gatsby-starter-boiler.netlify.com',
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
+    title: 'Carlos Zúñiga',
+    role: 'Web Developer',
+    hashtags: '#MTB #Soccer #Family',
+    github: 'cazuba',
+    linkedin: 'czuniga22',
+    email: 'krlos2290@gmail.com',
+    siteUrl: processGatsbySiteUrl,
+    description: `Hello, this is Carlos Zúñiga. I'm a passionate Web Developer, if you want to contact me please send me an email to: krlos2290@gmail.com`,
     author: `@cazuba`
   },
   plugins: [
@@ -51,6 +54,28 @@ module.exports = {
         host: processGatsbySiteUrl,
         sitemap: `${processGatsbySiteUrl}/sitemap.xml`,
         policy: [genRobotsPolicy(processGatsbySiteUrlEnv)]
+      }
+    },
+    {
+      resolve: 'gatsby-plugin-react-svg',
+      options: {
+        rule: {
+          include: /assets/
+        }
+      }
+    },
+    {
+      resolve: `gatsby-plugin-sass`,
+      options: {
+        includePaths: ['src/styles/']
+      }
+    },
+    {
+      resolve: `gatsby-plugin-s3`,
+      options: {
+        bucketName: process.env.GATSBY_S3_BUCKET_NAME,
+        region: process.env.GATSBY_S3_REGION,
+        enableS3StaticWebsiteHosting: true
       }
     },
     `gatsby-plugin-offline`,

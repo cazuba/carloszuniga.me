@@ -1,0 +1,56 @@
+.di-f {
+  display: flex;
+}
+.fldi-c {
+  flex-direction: column;
+}
+.alit-c {
+  align-items: center;
+}
+.juco-c {
+  justify-content: center;
+}
+.fosi-1 {
+  font-size: 12px;
+}
+.fosi-2 {
+  font-size: 14px;
+}
+.fosi-3 {
+  font-size: 16px;
+}
+.max-a {
+  margin-left: auto;
+  margin-right: auto;
+}
+.max-1 {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+.mab-1 {
+  margin-bottom: 1.45rem;
+}
+.pa-1 {
+  padding: 1rem;
+}
+.pal-1 {
+  padding-left: 0.3125rem;
+}
+.pat-2 {
+  padding-top: 1.3rem;
+}
+.pay-7 {
+  padding-top: 7.45rem;
+  padding-bottom: 7.45rem;
+}
+.po-r {
+  position: relative;
+}
+.icon {
+  display: block;
+  min-width: 30px;
+  * {
+    color: gray;
+  }
+}

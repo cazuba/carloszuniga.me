@@ -1,21 +1,39 @@
-import React from "react"
-import { Link } from "gatsby"
+import React from 'react'
+import { useStaticQuery, graphql } from 'gatsby'
 
-import Layout from "@components/layout"
-import Image from "@components/image"
-import SEO from "@components/seo"
+// components
+import Layout from '@components/Layout'
+import SEO from '@components/Seo'
+import PresentationCard from '@components/PresentationCard'
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
-  </Layout>
-)
+const IndexPage = () => {
+  const data = useStaticQuery(graphql`
+    query SiteTitleQuery {
+      site {
+        siteMetadata {
+          title
+          role
+          hashtags
+          github
+          linkedin
+          email
+        }
+      }
+    }
+  `)
+  return (
+    <Layout>
+      <SEO title={data.site.siteMetadata.title} />
+      <PresentationCard
+        siteName={data.site.siteMetadata.title}
+        role={data.site.siteMetadata.role}
+        hashtags={data.site.siteMetadata.hashtags}
+        github={data.site.siteMetadata.github}
+        linkedin={data.site.siteMetadata.linkedin}
+        email={data.site.siteMetadata.email}
+      />
+    </Layout>
+  )
+}
 
 export default IndexPage

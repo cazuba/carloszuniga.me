@@ -1,0 +1,19 @@
+$height: 300px;
+.header {
+  background: rebeccapurple;
+}
+.landscape {
+  &:after {
+    background-color: rgba(0, 0, 0, 0.1);
+    content: '';
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+  &,
+  & > div {
+    height: $height;
+  }
+}

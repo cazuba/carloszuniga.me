@@ -9,7 +9,7 @@ export default class HTML extends React.Component {
           <meta charSet="utf-8" />
           <meta httpEquiv="x-ua-compatible" content="ie=edge" />
           <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-          {/* HERE YOU CAN ADD FONTS, STYLES OR METATAGS */}
+          <link href="https://fonts.googleapis.com/css?family=Poppins:300&display=swap" rel="stylesheet" />
           {this.props.headComponents}
         </head>
 

@@ -1,0 +1,22 @@
+$card-width: 400px;
+$profile-image-size: 200px;
+.card {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 5px 1px #663399;
+  margin-top: -25%;
+  max-width: 100%;
+  overflow: hidden;
+  top: 50%;
+  width: $card-width;
+}
+.profile-photo {
+  margin-top: $profile-image-size / 2 * -1;
+  & > div {
+    border-radius: 50%;
+    border: 5px solid rgba(255, 255, 255, 0.5);
+    margin: 0 auto;
+    max-height: $profile-image-size;
+    max-width: $profile-image-size;
+  }
+}

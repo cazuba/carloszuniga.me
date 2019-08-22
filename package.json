@@ -32,7 +32,7 @@
     "test"
   ],
   "scripts": {
-    "build": "gatsby build",
+    "build": "npx -n \"-r dotenv/config\" gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write src/**/*.{js,jsx}",
     "start": "npm run develop",
@@ -43,20 +43,26 @@
     "test:c": "jest --coverage -u",
     "test:w": "jest --watch -u",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "deploy": "npx -n \"-r dotenv/config\" gatsby-plugin-s3 deploy"
   },
   "dependencies": {
+    "clsx": "^1.0.4",
     "gatsby": "^2.13.25",
     "gatsby-image": "^2.2.6",
     "gatsby-plugin-eslint": "^2.0.5",
     "gatsby-plugin-manifest": "^2.2.3",
     "gatsby-plugin-offline": "^2.2.4",
     "gatsby-plugin-react-helmet": "^3.1.2",
+    "gatsby-plugin-react-svg": "^2.1.2",
     "gatsby-plugin-robots-txt": "^1.5.0",
+    "gatsby-plugin-s3": "^0.3.2",
+    "gatsby-plugin-sass": "^2.1.10",
     "gatsby-plugin-sharp": "^2.2.7",
     "gatsby-plugin-sitemap": "^2.2.3",
     "gatsby-source-filesystem": "^2.1.5",
     "gatsby-transformer-sharp": "^2.2.3",
+    "node-sass": "^4.12.0",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
@@ -75,6 +81,7 @@
     "babel-jest": "^24.8.0",
     "babel-loader": "^8.0.6",
     "babel-preset-gatsby": "^0.2.6",
+    "dotenv": "^8.1.0",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.14.0",
     "identity-obj-proxy": "^3.0.0",
@@ -105,6 +112,7 @@
       "@hoc(.*)": "<rootDir>/src/hoc/$1",
       "@styles(.*)": "<rootDir>/src/styles/$1",
       "@modules(.*)": "<rootDir>/src/modules/$1",
+      "@assets(.*)": "<rootDir>/assets/$1",
       "@static(.*)": "<rootDir>/src/static/$1"
     },
     "testPathIgnorePatterns": [
