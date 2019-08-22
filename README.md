@@ -2,4 +2,4 @@
   Hi, I'm Carlos Zúñiga | Web Developer
 </h1>
 
-[![Visit Charlie's Website](http://carloszuniga.me/external-link.svg)](http://carloszuniga.me)
+Visit Charlie's Website [![http://carloszuniga.me](http://carloszuniga.me/external-link.svg)](http://carloszuniga.me)
