@@ -20,3 +20,51 @@ $profile-image-size: 200px;
     max-width: $profile-image-size;
   }
 }
+@media (max-width: 500px) {
+  .card {
+    background-color: #663399;
+    border-radius: 0;
+    color: #fff;
+    height: 100vh;
+    justify-content: flex-start;
+    margin-top: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+  .profile-photo {
+    margin-bottom: 2rem;
+  }
+  .info {
+    h1 {
+      margin-bottom: 2rem;
+    }
+    span {
+      margin-bottom: 0.5rem;
+    }
+  }
+  .icons {
+    bottom: 0;
+    justify-content: space-evenly;
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    width: 100%;
+
+    a {
+      background: #fff;
+      box-sizing: content-box;
+      margin: 0;
+      padding: 0.5rem 0;
+      height: 40px;
+
+      &:nth-child(2) {
+        margin: 0 2px;
+      }
+    }
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}

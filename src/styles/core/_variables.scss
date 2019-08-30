@@ -1,0 +1,72 @@
+$base-amount: 0.3125rem;
+$iterations-count: 4;
+
+// Media Queries
+$media-queries-map: (
+  s: 576,
+  m: 768,
+  l: 992px,
+  xl: 1200px
+);
+
+// Small devices (landscape phones, 576px and up)
+$media-s: map-get($media-queries-map, s);
+
+// Medium devices (tablets, 768px and up)
+$media-m: map-get($media-queries-map, m);
+
+// Large devices (desktops, 992px and up)
+$media-l: map-get($media-queries-map, l);
+
+// Extra large devices (large desktops, 1200px and up)
+$media-xl: map-get($media-queries-map, xl);
+
+// Displays
+$display-map: (
+  a: auto,
+  f: flex,
+  b: block,
+  i: inline,
+  if: inline-flex,
+  ib: inline-block,
+  n: none
+);
+
+// Flex
+$flex-direction-map: (
+  r: row,
+  rr: row-reverse,
+  c: column,
+  cr: column-reverse
+);
+$alignment-items-map: (
+  s: start,
+  c: center,
+  sb: space-between,
+  sa: space-around,
+  se: space-evenly,
+  fe: flex-end
+);
+$justify-content-map: (
+  c: center,
+  e: flex-end,
+  s: flex-start,
+  l: left,
+  r: right,
+  sa: space-around,
+  sb: space-between,
+  se: space-evenly,
+  st: stretch
+);
+
+// Position
+$position-map: (
+  a: absolute,
+  r: relative,
+  f: fixed,
+  static: static,
+  sticky: sticky
+);
+
+// Text
+$text-align-map: ( l: left, c: center, r: right );

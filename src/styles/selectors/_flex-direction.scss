@@ -1,0 +1,17 @@
+/*
+  Property: flex-direction
+  Prefix: fldi
+  Values: (r|rr|c|cr)
+  Media Query: true
+  For instance:
+    .fldi-{r|rr|c|cr}-{s|m|l|xl}
+*/
+@each $key in map-keys($flex-direction-map) {
+  $selector: fldi-#{$key};
+  .#{$selector} {
+    flex-direction: map-get($flex-direction-map, $key);
+  }
+  @include media_query_iterator($prefix: $selector) {
+    flex-direction: map-get($flex-direction-map, $key);
+  }
+}

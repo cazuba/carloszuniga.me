@@ -1,0 +1,8 @@
+/*
+  Property: font-size
+  Prefix: fosi
+  Values: (1...5)
+  Media Query: false
+  For instance: .fosi-{1...5}
+*/
+@include sizes_iterator($namespace: fosi, $property: font-size, $base: .75rem, $step: .125rem);

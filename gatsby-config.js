@@ -39,8 +39,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `carlos-zuniga-me`,
+        short_name: `CarlosZuniga`,
         start_url: `/`,
         background_color: `#663399`,
         theme_color: `#663399`,
@@ -73,8 +73,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-s3`,
       options: {
-        bucketName: process.env.GATSBY_S3_BUCKET_NAME,
-        region: process.env.GATSBY_S3_REGION,
+        bucketName: process.env.GATSBY_S3_BUCKET_NAME || 'develop',
+        region: process.env.GATSBY_S3_REGION  || 'develop',
         enableS3StaticWebsiteHosting: true
       }
     },

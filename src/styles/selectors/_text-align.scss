@@ -1,0 +1,13 @@
+/*
+  Property: text-align
+  Prefix: teal
+  Values: (l|c|r)
+  Media Query: false
+  For instance:
+    .teal-{l|c|r}
+*/
+@include props_iterator(
+  $namespace: teal,
+  $property: text-align,
+  $map: $text-align-map
+);

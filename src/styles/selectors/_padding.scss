@@ -1,0 +1,20 @@
+/*
+  Property: padding
+  Prefix: pa
+  Values: (1...4)
+  Media Query: false
+  For instance:
+    .pa-{1|2|3|4}
+    .pal-{1|2|3|4} // Padding Left
+    .par-{1|2|3|4} // Padding Right
+    .pat-{1|2|3|4} // Padding Top
+    .pab-{1|2|3|4} // Padding Bottom
+    .pax-{1|2|3|4} // Padding Horizontal
+    .pay-{1|2|3|4} // Padding Vertical
+*/
+@include cardinal_iterator(
+  $namespace: pa,
+  $property: padding,
+  $base-amount: $base-amount,
+  $iterations-count: 5
+);

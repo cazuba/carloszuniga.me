@@ -29,11 +29,11 @@ const PresentationCard = ({
         <div className={clsx('po-r', styles.profilePhoto)}>
           <ProfilePhoto />
         </div>
-        <div className="di-f fldi-c alit-c">
+        <div className={clsx('di-f', 'fldi-c', 'alit-c', styles.info)}>
           <h1>{siteName}</h1>
           <span className="fosi-2">{role}</span>
           <span className="fosi-1">{hashtags}</span>
-          <div className="pa-1 di-f">
+          <div className={clsx('pa-1', 'di-f', styles.icons)}>
             <a
               className="icon max-1"
               rel="publisher"
