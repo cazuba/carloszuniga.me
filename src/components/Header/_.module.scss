@@ -1,7 +1,7 @@
 $height: 300px;
 .header {
   background: rebeccapurple;
-  padding-bottom: 40%;
+  padding-bottom: 30%;
   transition: padding-bottom ease-in-out 400ms;
 }
 .landscape {
@@ -17,5 +17,17 @@ $height: 300px;
   &,
   & > div {
     height: $height;
+  }
+}
+
+@media (min-width: 900px) {
+  .header {
+    padding-bottom: 27%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .header {
+    padding-bottom: 20%;
   }
 }
