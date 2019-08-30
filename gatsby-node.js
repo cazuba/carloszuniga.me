@@ -14,7 +14,8 @@ exports.onCreateWebpackConfig = ({ actions }) => {
         '@compositions': path.resolve(__dirname, './src/compositions'),
         '@hoc': path.resolve(__dirname, './src/hoc'),
         '@modules': path.resolve(__dirname, './src/modules'),
-        '@assets': path.resolve(__dirname, './assets')
+        '@assets': path.resolve(__dirname, './assets'),
+        '@styles': path.resolve(__dirname, './src/styles')
       }
     }
   })

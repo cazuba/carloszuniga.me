@@ -140,7 +140,7 @@ const CountdownMexicoTrip = ({ fromDate, toDate }) => {
 
   return (
     <div className="di-f fldi-c alit-c">
-      <h1 className="di-f alit-c mat-3" style={{ whiteSpace: 'nowrap' }}>
+      <h1 className={clsx('di-f', 'alit-c', 'mat-3', styles.title)}>
         Mexico Trip
       </h1>
       <div className={clsx('di-f', 'fldi-r', 'juco-sb', styles.boxContainer)}>
