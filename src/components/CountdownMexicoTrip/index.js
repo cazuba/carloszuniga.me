@@ -5,7 +5,7 @@ import dayjs from 'dayjs'
 // components
 import Flying from './components/Flying'
 import BoxCount from './components/BoxCount'
-import clsx from 'clsx';
+import clsx from 'clsx'
 
 // styles
 import styles from './_.module.scss'
@@ -140,7 +140,9 @@ const CountdownMexicoTrip = ({ fromDate, toDate }) => {
 
   return (
     <div className="di-f fldi-c alit-c">
-      <h1>Mexico Trip</h1>
+      <h1 className="di-f alit-c mat-3" style={{ whiteSpace: 'nowrap' }}>
+        Mexico Trip
+      </h1>
       <div className={clsx('di-f', 'fldi-r', 'juco-sb', styles.boxContainer)}>
         <BoxCount counter={formatCount(days)} label="DAYS" />
         <BoxCount counter={formatCount(hours)} label="HOURS" />
