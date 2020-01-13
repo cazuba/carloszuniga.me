@@ -175,7 +175,12 @@ const CountdownMexicoTrip = ({ fromDate, toDate }) => {
             <Packing />
           </div>
         )}
-        {partyOneDay && <div>YA FALTA MENOS DE 1 DIA</div>}
+        {partyOneDay && (
+          <div>
+            <span>YA FALTA MENOS DE 1 DIA</span>
+            <Packing />
+          </div>
+        )}
         {partyThreeHours && (
           <div>
             QUEDA MENOS DE 3 HORAS...ya deberíamos estar en el aeropuerto!
