@@ -1,0 +1,32 @@
+.packing {
+  border-radius: 4px;
+  border: 2px solid #8bc34a;
+  height: auto;
+  left: -50%;
+  max-width: max-content;
+  position: absolute;
+  top: 50px;
+  width: 200%;
+}
+.packing2,
+.packing3 {
+  display: none;
+}
+@media (max-width: 900px) {
+  .packing {
+    display: block;
+    left: -12px;
+    top: 100px;
+    transform: rotate(-30deg);
+    width: 120px;
+  }
+  .packing2 {
+    left: auto;
+    right: -12px;
+    top: 305px;
+    transform: rotate(30deg);
+  }
+  .packing3 {
+    top: 440px;
+  }
+}

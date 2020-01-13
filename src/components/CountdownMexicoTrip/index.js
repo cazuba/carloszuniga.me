@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import { string } from 'prop-types'
 import dayjs from 'dayjs'
+import clsx from 'clsx'
 
 // components
 import Flying from './components/Flying'
 import BoxCount from './components/BoxCount'
-import clsx from 'clsx'
+import Packing from './components/Packing'
 
 // styles
 import styles from './_.module.scss'
@@ -149,20 +150,42 @@ const CountdownMexicoTrip = ({ fromDate, toDate }) => {
         <BoxCount counter={formatCount(minutes)} label="MINUTES" />
         <BoxCount counter={formatCount(seconds)} label="SECONDS" />
       </div>
-      {partyOneMonth && <div>QUEDA MENOS DE 1 MES</div>}
-      {partyOneWeek && <div>QUEDA MENOS DE 1 SEMANA</div>}
-      {partyThreeDays && <div>QUEDA MENOS DE 3 DIAS</div>}
-      {partyTwoDays && <div>QUEDA MENOS DE 2 DIAS</div>}
-      {partyOneDay && <div>YA FALTA MENOS DE 1 DIA</div>}
-      {partyThreeHours && (
-        <div>
-          QUEDA MENOS DE 3 HORAS...ya deberíamos estar en el aeropuerto!
-        </div>
-      )}
-      {partyTwoHours && <div>QUEDA MENOS DE 2 HORAS</div>}
-      {partyOneHour && <div>QUEDA MENOS DE 1 HORA</div>}
-      {partyTenMinutes && <div>QUEDA MENOS DE 10 MINUTOS!!!</div>}
-      {partyIsOn && <div>Desconteo...</div>}
+      <div className={clsx('mat-4', styles.funnyMsg)}>
+        {partyOneMonth && (
+          <div>
+            <span>QUEDA MENOS DE 1 MES</span>
+            <Packing />
+          </div>
+        )}
+        {partyOneWeek && (
+          <div>
+            <span>QUEDA MENOS DE 1 SEMANA</span>
+            <Packing />
+          </div>
+        )}
+        {partyThreeDays && (
+          <div>
+            <span>QUEDA MENOS DE 3 DIAS</span>
+            <Packing />
+          </div>
+        )}
+        {partyTwoDays && (
+          <div>
+            <span>QUEDA MENOS DE 2 DIAS</span>
+            <Packing />
+          </div>
+        )}
+        {partyOneDay && <div>YA FALTA MENOS DE 1 DIA</div>}
+        {partyThreeHours && (
+          <div>
+            QUEDA MENOS DE 3 HORAS...ya deberíamos estar en el aeropuerto!
+          </div>
+        )}
+        {partyTwoHours && <div>QUEDA MENOS DE 2 HORAS</div>}
+        {partyOneHour && <div>QUEDA MENOS DE 1 HORA</div>}
+        {partyTenMinutes && <div>QUEDA MENOS DE 10 MINUTOS!!!</div>}
+        {partyIsOn && <div>Desconteo...</div>}
+      </div>
       {flying && <Flying />}
     </div>
   )

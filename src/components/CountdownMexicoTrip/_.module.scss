@@ -1,9 +1,23 @@
 .title {
-  text-shadow: 1px 1px #ffffff;
   white-space: nowrap;
 }
+.funny-msg {
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  position: relative;
+  text-shadow: 0px 0px 5px #000;
+}
 @media (max-width: 900px) {
+  .title {
+    margin-bottom: 0;
+  }
   .box-container {
     flex-direction: column;
+  }
+  .funny-msg {
+    position: static;
+    color: black;
+    text-shadow: none;
   }
 }
