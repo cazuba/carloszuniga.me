@@ -1,0 +1,24 @@
+@mixin nav-item-active-border {
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
+}
+.light-nav {
+  a:not(.nav-item-active) {
+    color: rgba(0, 0, 0, 0.7) !important;
+  }
+  .nav-item-active {
+    color: #000000 !important;
+    border-color: rgba(0, 0, 0, 0.86);
+    @include nav-item-active-border;
+  }
+}
+.dark-nav {
+  a:not(.nav-item-active) {
+    color: rgba(255, 255, 255, 0.7) !important;
+  }
+  .nav-item-active {
+    color: #ffffff !important;
+    border-color: var(--white);
+    @include nav-item-active-border;
+  }
+}

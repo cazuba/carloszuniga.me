@@ -1,16 +1,17 @@
-.icon {
-  display: block;
-  min-width: 30px;
-  * {
-    color: gray;
-  }
+* {
+  font-family: 'Roboto', sans-serif;
 }
-.emoji {
-  font-size: 140px;
-  line-height: 1;
-  margin: 0.5rem;
+html {
+  margin: 0;
+  padding: 0;
 }
-
-#___gatsby {
-  overflow-x: hidden;
+.dark-mode {
+  background: var(--dark);
+  color: var(--white);
+}
+.light-mode {
+  background: var(--light);
+}
+:root {
+  --dark: #000 !important;
 }

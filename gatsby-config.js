@@ -20,7 +20,7 @@ module.exports = {
     hashtags: '#MTB #Soccer #Family',
     github: 'cazuba',
     linkedin: 'czuniga22',
-    email: 'hi@carloszuniga.me',
+    email: 'krlos2290@gmail.com',
     siteUrl: processGatsbySiteUrl,
     description: `Hello, this is Carlos Zúñiga. I'm a passionate Web Developer, if you want to contact me please send me an email to: krlos2290@gmail.com`,
     author: `@cazuba`

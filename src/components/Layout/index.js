@@ -1,40 +1,57 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
+import React, { useMemo, useContext } from 'react'
+import clsx from 'clsx'
+import PropTypes, { any } from 'prop-types'
+import Container from 'react-bootstrap/Container'
 
-import React from 'react'
-import PropTypes from 'prop-types'
+// Bootstrap CSS
+import 'bootstrap/dist/css/bootstrap.min.css'
+// Font-awesome CSS
+import 'font-awesome/css/font-awesome.css'
+// Custom Global CSS
+import '@styles/index.scss'
+
+// context
+import { ThemeProvider, ThemeContext } from '@context/ThemeContext'
 
 // components
-import Header from '@components/Header'
+import Nav from '@components/Nav'
+import Footer from '@components/Footer'
 
-const Layout = ({ children }) => (
-  <>
-    <Header />
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `0px 1.0875rem 1.45rem`,
-        paddingTop: 0
-      }}
-    >
-      <main>{children}</main>
-      <footer className="di-f pat-2 juco-c alit-c">
-        © {new Date().getFullYear()}, Built with
-        <a className="pal-1" target="blank" href="https://www.gatsbyjs.org">
-          Gatsby
-        </a>
-      </footer>
+const Content = ({ children, location }) => {
+  const hash = useMemo(() => location.hash, [location])
+  const { theme } = useContext(ThemeContext)
+  return (
+    <div className={clsx("mt-2", `${theme}-mode`)}>
+      <Nav hash={hash} />
+      <Container as="main">{children}</Container>
+      <Footer />
     </div>
-  </>
-)
+  )
+}
+Content.propTypes = {
+  children: PropTypes.node.isRequired,
+  location: any
+}
+
+Content.defaultProps = {
+  location: { hash: '' }
+}
+
+const Layout = props => {
+  return (
+    <ThemeProvider>
+      <Content {...props} />
+    </ThemeProvider>
+  )
+}
 
 Layout.propTypes = {
-  children: PropTypes.node.isRequired
+  children: PropTypes.node.isRequired,
+  location: any
+}
+
+Layout.defaultProps = {
+  location: { hash: '' }
 }
 
 export default Layout

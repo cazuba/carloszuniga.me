@@ -1,0 +1,21 @@
+// xs: 0,
+// sm: 576px,
+// md: 768px,
+// lg: 992px,
+// xl: 1200px
+$max-breakpoint: 768px;
+
+.image-container {
+  border: 20px solid #008080;
+  height: auto;
+  max-width: 100%;
+  width: 400px;
+}
+@media (max-width: $max-breakpoint) {
+  .profile-picture {
+    order: 2;
+  }
+  .presentation-card {
+    order: 1;
+  }
+}
