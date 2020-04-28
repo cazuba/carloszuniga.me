@@ -12,48 +12,8 @@ const genRobotsPolicy = env => {
 
   return policy
 }
-
-module.exports = {
-  siteMetadata: {
-    title: 'Carlos Zúñiga',
-    aka: 'Charlie',
-    role: 'Senior Web Developer',
-    github: 'https://github.com/cazuba',
-    linkedin: 'https://www.linkedin.com/in/czuniga22/',
-    twitter: 'https://twitter.com/krlos2290',
-    email: "mailto:krlos2290@gmail.com?subject=Hi Charlie | I've a job for you",
-    emailDisplay: 'krlos2290@gmail.com',
-    phone: '+50670818299',
-    phoneDisplay: '(+506) 7081 8299',
-    location: 'https://goo.gl/maps/75c4FbQK6ou9Vxjc9',
-    locationDisplay: 'Heredia, Costa Rica',
-    bio:
-      "Hello, I'm Carlos Zúñiga, a passionate Senior Web Developer from Costa Rica. I've been in the digital world from more than 6 years working with different techologies, some of them are:",
-    hashtags: [
-      'Git',
-      'Javascript',
-      'ReactJS',
-      'NodeJS',
-      'MongoDB',
-      'GraphQL',
-      'ApolloServer',
-      'ApolloClient',
-      'PHP',
-      'Wordpress',
-      'HTML/HTML5',
-      'CSS/CSS3',
-      'ExpressJS',
-      'Meteor+ReactJS',
-      'MySQL',
-      'Laravel',
-      'JQuery'
-    ],
-    siteUrl: processGatsbySiteUrl,
-    description: `Hello, I'm Carlos Zúñiga, a passionate Senior Web Developer, if you want to contact me please send me an email to: krlos2290@gmail.com`,
-    author: `@krlos2290`
-  },
-  plugins: [
-    `gatsby-plugin-react-helmet`,
+const gatsbyConfigPlugins = [
+  `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -104,5 +64,55 @@ module.exports = {
     },
     `gatsby-plugin-offline`,
     'gatsby-plugin-sitemap'
-  ]
+]
+
+if(processGatsbySiteUrlEnv == 'prod') {
+  gatsbyConfigPlugins.push({
+    resolve: `gatsby-plugin-google-analytics`,
+    options: {
+      trackingId: process.env.GATSBY_GA_TRACKING_ID,
+      head: true
+    }
+  })
+}
+module.exports = {
+  siteMetadata: {
+    title: 'Carlos Zúñiga',
+    aka: 'Charlie',
+    role: 'Senior Web Developer',
+    github: 'https://github.com/cazuba',
+    linkedin: 'https://www.linkedin.com/in/czuniga22/',
+    twitter: 'https://twitter.com/krlos2290',
+    email: "mailto:krlos2290@gmail.com?subject=Hi Charlie | I've a job for you",
+    emailDisplay: 'krlos2290@gmail.com',
+    phone: '+50670818299',
+    phoneDisplay: '(+506) 7081 8299',
+    location: 'https://goo.gl/maps/75c4FbQK6ou9Vxjc9',
+    locationDisplay: 'Heredia, Costa Rica',
+    bio:
+      "Hello, I'm Carlos Zúñiga, a passionate Senior Web Developer from Costa Rica. I've been in the digital world from more than 6 years working with different techologies, some of them are:",
+    hashtags: [
+      'Git',
+      'Javascript',
+      'ReactJS',
+      'NodeJS',
+      'MongoDB',
+      'GraphQL',
+      'ApolloServer',
+      'ApolloClient',
+      'PHP',
+      'Wordpress',
+      'HTML/HTML5',
+      'CSS/CSS3',
+      'ExpressJS',
+      'Meteor+ReactJS',
+      'MySQL',
+      'Laravel',
+      'JQuery'
+    ],
+    siteUrl: processGatsbySiteUrl,
+    description: `Hello, I'm Carlos Zúñiga, a passionate Senior Web Developer, if you want to contact me please send me an email to: krlos2290@gmail.com`,
+    author: `@krlos2290`
+  },
+  plugins: gatsbyConfigPlugins
 }
