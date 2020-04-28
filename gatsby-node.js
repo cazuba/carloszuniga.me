@@ -5,8 +5,25 @@
  */
 const path = require('path')
 
-exports.onCreateWebpackConfig = ({ actions }) => {
+exports.onCreateWebpackConfig = ({ stage, actions, plugins, getConfig }) => {
+  const sassRuleModules = {
+    test: /\.s(a|c)ss$/,
+    use: [
+      {
+        loader: 'sass-resources-loader',
+        options: {
+          resources: [
+            'src/styles/core/_variables.scss'
+          ]
+        }
+      }
+    ]
+  }
+
   actions.setWebpackConfig({
+    module: {
+      rules: [sassRuleModules]
+    },
     resolve: {
       alias: {
         '@images': path.resolve(__dirname, './src/images'),
@@ -18,6 +35,11 @@ exports.onCreateWebpackConfig = ({ actions }) => {
         '@assets': path.resolve(__dirname, './assets'),
         '@styles': path.resolve(__dirname, './src/styles')
       }
-    }
+    },
+    plugins: [
+      plugins.define({
+        'global.GENTLY': false
+      })
+    ]
   })
 }

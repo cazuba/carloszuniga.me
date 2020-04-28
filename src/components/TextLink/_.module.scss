@@ -1,0 +1,17 @@
+$color-light-hover: #085f5f;
+$color-dark-hover: #37ffff;
+.link {
+  color: $color-primary;
+  min-height: 40px;
+  min-width: 40px;
+  &:hover {
+    color: $color-light-hover;
+    transform: scale(1.02);
+  }
+}
+.dark-link {
+  color: $color-primary-dark;
+  &:hover {
+    color: $color-dark-hover;
+  }
+}

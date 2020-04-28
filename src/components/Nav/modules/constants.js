@@ -10,17 +10,17 @@ export const links = [
   {
     label: 'Skills',
     link: '#skills'
-  },
-  {
-    label: 'Experiences',
-    link: '#experiences'
-  },
-  {
-    label: 'Portafolio',
-    link: '#portafolio'
-  },
-  {
-    label: 'Contact',
-    link: '#contact'
   }
+  // {
+  //   label: 'Experiences',
+  //   link: '#experiences'
+  // },
+  // {
+  //   label: 'Portafolio',
+  //   link: '#portafolio'
+  // },
+  // {
+  //   label: 'Contact',
+  //   link: '#contact'
+  // }
 ]

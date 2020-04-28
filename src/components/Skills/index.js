@@ -20,15 +20,13 @@ const Skills = memo(() => {
   //   }
   // `)
   return (
-    <Section>
+    <Section id="skills">
       <Row>
         <Col xs={12} sm={6}>
-          Technical Skills
+          <h4 className="pb-4">Technical Skills</h4>
           <ul>
             <li>Javascript</li>
             <li>PHP</li>
-          </ul>
-          <ul>
             <li>ReactJS</li>
             <li>NodeJS</li>
             <li>GraphQL</li>
@@ -37,7 +35,7 @@ const Skills = memo(() => {
           </ul>
         </Col>
         <Col xs={12} sm={6}>
-          Professional Skills
+          <h4 className="pb-4">Professional Skills</h4>
           <ul>
             <li>Communication</li>
             <li>Team Work</li>

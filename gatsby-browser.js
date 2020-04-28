@@ -6,7 +6,7 @@
 
 // You can delete this file if you're not using it
 
-import './src/styles/index.scss'
+import './src/styles/entry.scss'
 
 export const onServiceWorkerUpdateReady = () => {
   const answer = window.confirm(

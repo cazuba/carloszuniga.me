@@ -13,11 +13,6 @@ const IndexPage = ({ location }) => {
       site {
         siteMetadata {
           title
-          role
-          hashtags
-          github
-          linkedin
-          email
         }
       }
     }

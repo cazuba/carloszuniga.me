@@ -8,7 +8,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 // Font-awesome CSS
 import 'font-awesome/css/font-awesome.css'
 // Custom Global CSS
-import '@styles/index.scss'
+import '@styles/entry.scss'
 
 // context
 import { ThemeProvider, ThemeContext } from '@context/ThemeContext'
@@ -21,7 +21,7 @@ const Content = ({ children, location }) => {
   const hash = useMemo(() => location.hash, [location])
   const { theme } = useContext(ThemeContext)
   return (
-    <div className={clsx("mt-2", `${theme}-mode`)}>
+    <div className={clsx("my-2", `${theme}-mode`)}>
       <Nav hash={hash} />
       <Container as="main">{children}</Container>
       <Footer />

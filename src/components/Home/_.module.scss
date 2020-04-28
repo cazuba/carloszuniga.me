@@ -6,10 +6,38 @@
 $max-breakpoint: 768px;
 
 .image-container {
-  border: 20px solid #008080;
+  border: 5px solid $color-primary;
   height: auto;
   max-width: 100%;
   width: 400px;
+}
+.hello {
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+  &:after,
+  &:before {
+    border: 2px solid $color-primary;
+    content: ' ';
+    display: block;
+    height: calc(100% + 10px);
+    margin: -5px;
+    position: absolute;
+    transform: rotate(2.5deg);
+    top: 0;
+    width: calc(100% + 10px);
+    z-index: -1;
+  }
+  &:before {
+    background-color: $color-primary-dark;
+  }
+  &:after {
+    border-color: white;
+    background-color: $color-primary;
+    border-width: 1px;
+    transform: rotate(-2deg);
+    z-index: -1;
+  }
 }
 @media (max-width: $max-breakpoint) {
   .profile-picture {

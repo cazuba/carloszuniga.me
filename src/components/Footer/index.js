@@ -1,9 +1,13 @@
 import React, { memo } from 'react'
+import clsx from 'clsx'
 import Container from 'react-bootstrap/Container'
+
+// styles
+import styles from './_.module.scss'
 
 const Footer = memo(() => {
   return (
-    <Container as="footer">
+    <Container as="footer" className={clsx('py-5', 'text-center', styles.footer)}>
       <span>All right reserved Carlos Zúñiga @ {new Date().getFullYear()}</span>
     </Container>
   )

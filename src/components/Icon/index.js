@@ -1,4 +1,6 @@
 import React, { memo } from 'react'
+import { string } from 'prop-types'
+import clsx from 'clsx'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import {
@@ -6,6 +8,7 @@ import {
   faFacebook,
   faGithub,
   faHtml5,
+  faLinkedinIn,
   faJs,
   faNode,
   faPhp,
@@ -13,20 +16,37 @@ import {
   faTwitter,
   faVuejs
 } from '@fortawesome/free-brands-svg-icons'
-import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons'
-import { string } from 'prop-types'
+import {
+  faBiking,
+  faCode,
+  faEnvelope,
+  faHome,
+  faMapMarkerAlt,
+  faPhoneAlt,
+  faSun,
+  faMoon
+} from '@fortawesome/free-solid-svg-icons'
 
 library.add(
+  // Brands
   faAws,
   faFacebook,
   faGithub,
   faHtml5,
+  faLinkedinIn,
   faJs,
   faNode,
   faPhp,
   faReact,
   faTwitter,
   faVuejs,
+  // Solid
+  faBiking,
+  faCode,
+  faEnvelope,
+  faHome,
+  faMapMarkerAlt,
+  faPhoneAlt,
   faSun,
   faMoon
 )
@@ -35,6 +55,7 @@ const brands = [
   'facebook',
   'github',
   'html5',
+  'linkedin-in',
   'js',
   'node',
   'php',
@@ -42,10 +63,10 @@ const brands = [
   'twitter',
   'vuejs'
 ]
-const Icon = memo(({ name, title }) => {
+const Icon = memo(({ name, title, className }) => {
   const isBrand = brands.indexOf(name) !== -1
   return (
-    <div className="icon" title={title}>
+    <div className={clsx('icon', className)} title={title}>
       <FontAwesomeIcon icon={[isBrand ? 'fab' : 'fas', name]} />
     </div>
   )
@@ -53,10 +74,12 @@ const Icon = memo(({ name, title }) => {
 
 Icon.propTypes = {
   name: string.isRequired,
-  title: string
+  title: string,
+  className: string
 }
 Icon.defaultProps = {
-  title: ''
+  title: '',
+  className: ''
 }
 
 export default Icon

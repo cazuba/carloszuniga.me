@@ -4,21 +4,19 @@ import React, { memo } from 'react'
 import Home from '@components/Home'
 import About from '@components/About'
 import Skills from '@components/Skills'
-import Experiences from '@components/Experiences'
-import Portafolio from '@components/Portafolio'
-import Contact from '@components/Contact'
+// import Experiences from '@components/Experiences'
+// import Portafolio from '@components/Portafolio'
+// import Contact from '@components/Contact'
 
-const Profile = memo(props => {
+const Profile = memo(() => {
   return <>
   <Home />
   <About />
   <Skills />
-  <Experiences />
-  <Portafolio />
-  <Contact />
+  {/* <Experiences /> */}
+  {/* <Portafolio /> */}
+  {/* <Contact /> */}
   </>
 })
-
-Profile.propTypes = {}
 
 export default Profile

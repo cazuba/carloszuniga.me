@@ -16,14 +16,41 @@ const genRobotsPolicy = env => {
 module.exports = {
   siteMetadata: {
     title: 'Carlos Zúñiga',
-    role: 'Web Developer',
-    hashtags: '#MTB #Soccer #Family',
-    github: 'cazuba',
-    linkedin: 'czuniga22',
-    email: 'krlos2290@gmail.com',
+    aka: 'Charlie',
+    role: 'Senior Web Developer',
+    github: 'https://github.com/cazuba',
+    linkedin: 'https://www.linkedin.com/in/czuniga22/',
+    twitter: 'https://twitter.com/krlos2290',
+    email: "mailto:krlos2290@gmail.com?subject=Hi Charlie | I've a job for you",
+    emailDisplay: 'krlos2290@gmail.com',
+    phone: '+50670818299',
+    phoneDisplay: '(+506) 7081 8299',
+    location: 'https://goo.gl/maps/75c4FbQK6ou9Vxjc9',
+    locationDisplay: 'Heredia, Costa Rica',
+    bio:
+      "Hello, I'm Carlos Zúñiga, a passionate Senior Web Developer from Costa Rica. I've been in the digital world from more than 6 years working with different techologies, some of them are:",
+    hashtags: [
+      'Git',
+      'Javascript',
+      'ReactJS',
+      'NodeJS',
+      'MongoDB',
+      'GraphQL',
+      'ApolloServer',
+      'ApolloClient',
+      'PHP',
+      'Wordpress',
+      'HTML/HTML5',
+      'CSS/CSS3',
+      'ExpressJS',
+      'Meteor+ReactJS',
+      'MySQL',
+      'Laravel',
+      'JQuery'
+    ],
     siteUrl: processGatsbySiteUrl,
-    description: `Hello, this is Carlos Zúñiga. I'm a passionate Web Developer, if you want to contact me please send me an email to: krlos2290@gmail.com`,
-    author: `@cazuba`
+    description: `Hello, I'm Carlos Zúñiga, a passionate Senior Web Developer, if you want to contact me please send me an email to: krlos2290@gmail.com`,
+    author: `@krlos2290`
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -65,16 +92,13 @@ module.exports = {
       }
     },
     {
-      resolve: `gatsby-plugin-sass`,
-      options: {
-        includePaths: ['src/styles/']
-      }
+      resolve: `gatsby-plugin-sass`
     },
     {
       resolve: `gatsby-plugin-s3`,
       options: {
         bucketName: process.env.GATSBY_S3_BUCKET_NAME || 'develop',
-        region: process.env.GATSBY_S3_REGION  || 'develop',
+        region: process.env.GATSBY_S3_REGION || 'develop',
         enableS3StaticWebsiteHosting: true
       }
     },

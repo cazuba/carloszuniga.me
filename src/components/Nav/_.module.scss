@@ -3,7 +3,11 @@
   border-bottom-style: solid;
 }
 .light-nav {
-  a:not(.nav-item-active) {
+  .brand {
+    color: $color-primary !important;
+    font-size: 1.875rem;
+  }
+  a:not(.nav-item-active):not(.brand) {
     color: rgba(0, 0, 0, 0.7) !important;
   }
   .nav-item-active {
@@ -13,12 +17,16 @@
   }
 }
 .dark-nav {
-  a:not(.nav-item-active) {
+  background-color: #000;
+  .brand {
+    color: $color-primary-dark !important;
+  }
+  a:not(.nav-item-active):not(.brand) {
     color: rgba(255, 255, 255, 0.7) !important;
   }
   .nav-item-active {
     color: #ffffff !important;
-    border-color: var(--white);
+    border-color: $color-white;
     @include nav-item-active-border;
   }
 }

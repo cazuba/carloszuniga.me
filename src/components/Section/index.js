@@ -3,15 +3,20 @@ import { any, string, number } from 'prop-types'
 import clsx from 'clsx'
 import Container from 'react-bootstrap/Container'
 
-const Section = memo(({ as, padding, margin, children }) => {
+const Section = memo(({ id, as, padding, margin, children }) => {
   return (
-    <Container as={as} className={clsx(`py-${padding}`, `my-${margin}`)}>
+    <Container
+      id={id}
+      as={as}
+      className={clsx(`py-${padding}`, `my-${margin}`)}
+    >
       {children}
     </Container>
   )
 })
 
 Section.propTypes = {
+  id: string,
   as: string,
   padding: number,
   margin: number,
@@ -20,6 +25,7 @@ Section.propTypes = {
 
 Section.defaultProps = {
   as: 'section',
+  id: null,
   padding: 5,
   margin: 3,
   children: null

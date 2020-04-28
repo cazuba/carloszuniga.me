@@ -8,7 +8,7 @@ import Nav from 'react-bootstrap/Nav'
 import { ThemeContext, DARK_MODE } from '@context/ThemeContext'
 
 // components
-import Icon from "@components/Icon"
+import Icon from '@components/Icon'
 
 // modules
 import { links } from './modules/constants'
@@ -19,33 +19,47 @@ import styles from './_.module.scss'
 const Header = ({ hash }) => {
   const { theme, toggleTheme } = useContext(ThemeContext)
   return (
-      <Navbar className={clsx(`${theme}-mode`, styles[`${theme}Nav`])} expand="lg" variant={theme} fixed="top">
-        <div className={clsx('container', `${theme}-mode`)}>
-          <Navbar.Brand href="#home">CZ</Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="ml-auto">
-              {links.map(item => (
-                <Nav.Link
-                  className={clsx("mr-4", hash === item.link ? styles.navItemActive : '')}
-                  key={item.link}
-                  href={item.link}
-                >
-                  {item.label}
-                </Nav.Link>
-              ))}
+    <Navbar
+      className={clsx(`${theme}-mode`, styles[`${theme}Nav`])}
+      expand="lg"
+      variant={theme}
+      fixed="top"
+    >
+      <div className={clsx('container', `${theme}-mode`)}>
+        <Navbar.Brand
+          href="#home"
+          className={clsx('font-weight-bold', styles.brand)}
+          rel="alternate"
+        >
+          CZ
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="ml-auto">
+            {links.map(item => (
               <Nav.Link
-                onClick={event => {
-                  event.preventDefault()
-                  toggleTheme()
-                }}
+                className={clsx(
+                  'mr-4',
+                  hash === item.link ? styles.navItemActive : ''
+                )}
+                key={item.link}
+                href={item.link}
               >
-                {theme === DARK_MODE ? <Icon name="sun" /> : <Icon name="moon" />}
+                {item.label}
               </Nav.Link>
-            </Nav>
-          </Navbar.Collapse>
-        </div>
-      </Navbar>
+            ))}
+            <Nav.Link
+              onClick={event => {
+                event.preventDefault()
+                toggleTheme()
+              }}
+            >
+              {theme === DARK_MODE ? <Icon name="sun" /> : <Icon name="moon" />}
+            </Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+      </div>
+    </Navbar>
   )
 }
 

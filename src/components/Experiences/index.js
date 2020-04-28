@@ -1,14 +1,18 @@
-import React, { memo } from 'react'
+import React, { memo, useContext } from 'react'
 // import { useStaticQuery, graphql } from 'gatsby'
 // import Img from 'gatsby-image'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Card from 'react-bootstrap/Card'
 
+// context
+import { ThemeContext } from '@context/ThemeContext'
+
 // components
 import Section from '@components/Section'
 
 const Experiences = memo(() => {
+  const { theme } = useContext(ThemeContext)
   //   const data = useStaticQuery(graphql`
   //     query {
   //       placeholderImage: file(relativePath: { eq: "programming.png" }) {
@@ -25,7 +29,7 @@ const Experiences = memo(() => {
       <Row>
         <Col xs={12} sm={6}>
           Education
-          <Card className="mb-2">
+          <Card bg={theme} className="mb-2">
             <Card.Body>
               <Card.Title>Degree</Card.Title>
               <Card.Text>
@@ -34,7 +38,7 @@ const Experiences = memo(() => {
               </Card.Text>
             </Card.Body>
           </Card>
-          <Card className="mb-2">
+          <Card bg={theme} className="mb-2">
             <Card.Body>
               <Card.Title>Web Development</Card.Title>
               <Card.Text>
@@ -43,7 +47,7 @@ const Experiences = memo(() => {
               </Card.Text>
             </Card.Body>
           </Card>
-          <Card className="mb-2">
+          <Card bg={theme} className="mb-2">
             <Card.Body>
               <Card.Title>MTB</Card.Title>
               <Card.Text>
@@ -55,7 +59,7 @@ const Experiences = memo(() => {
         </Col>
         <Col xs={12} sm={6}>
           Work Experience
-          <Card className="mb-2">
+          <Card bg={theme} className="mb-2">
             <Card.Body>
               <Card.Title>Degree</Card.Title>
               <Card.Text>
@@ -64,7 +68,7 @@ const Experiences = memo(() => {
               </Card.Text>
             </Card.Body>
           </Card>
-          <Card className="mb-2">
+          <Card bg={theme} className="mb-2">
             <Card.Body>
               <Card.Title>Web Development</Card.Title>
               <Card.Text>
@@ -73,7 +77,7 @@ const Experiences = memo(() => {
               </Card.Text>
             </Card.Body>
           </Card>
-          <Card className="mb-2">
+          <Card bg={theme} className="mb-2">
             <Card.Body>
               <Card.Title>MTB</Card.Title>
               <Card.Text>

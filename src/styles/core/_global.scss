@@ -1,17 +1,42 @@
+@import './variables';
+
 * {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Raleway', sans-serif;
 }
 html {
   margin: 0;
   padding: 0;
 }
 .dark-mode {
-  background: var(--dark);
+  background: rgba(0, 0, 0, 0.95);
   color: var(--white);
+
+  .badge.badge-primary {
+    background-color: $color-black;
+    border-color: $color-primary-dark;
+    color: $color-white;
+  }
 }
 .light-mode {
   background: var(--light);
+  .badge.badge-primary {
+    background-color: $color-white;
+    border-color: $color-primary;
+    color: $color-black;
+  }
 }
+.badge {
+  cursor: default;
+  font-weight: 600;
+}
+.badge.badge-primary {
+  border: 1px solid;
+  font-size: 0.75rem;
+  letter-spacing: 0.05rem;
+}
+
 :root {
-  --dark: #000 !important;
+  --dark: $color-black !important;
+  --primary: $color-primary !important;
+  --primary-dark: $color-primary-dark !important;
 }
