@@ -7,23 +7,12 @@ import SEO from '@components/Seo'
 import Profile from '@compositions/Profile'
 import { any } from 'prop-types'
 
-const IndexPage = ({ location }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
-  return (
-    <Layout location={location}>
-      <SEO title={data.site.siteMetadata.title} />
-      <Profile />
-    </Layout>
-  )
-}
+const IndexPage = ({ location }) => (
+  <Layout location={location}>
+    <SEO title="Home" />
+    <Profile />
+  </Layout>
+)
 
 IndexPage.propTypes = {
   location: any

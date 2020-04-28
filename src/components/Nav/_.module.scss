@@ -2,10 +2,12 @@
   border-bottom-width: 2px;
   border-bottom-style: solid;
 }
+.brand {
+  font-size: 1.875rem;
+}
 .light-nav {
   .brand {
     color: $color-primary !important;
-    font-size: 1.875rem;
   }
   a:not(.nav-item-active):not(.brand) {
     color: rgba(0, 0, 0, 0.7) !important;
