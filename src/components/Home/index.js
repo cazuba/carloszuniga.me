@@ -31,7 +31,7 @@ const Home = memo(() => {
       }
     }
   `)
-  console.log({ data })
+
   return (
     <Section id="home" margin={5}>
       <Row className="py-5 mb-4 align-items-center">

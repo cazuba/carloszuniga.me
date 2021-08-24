@@ -1,15 +1,15 @@
 export const links = [
   {
     label: 'Home',
-    link: '#home'
+    link: '/#home'
   },
   {
     label: 'About',
-    link: '#about'
+    link: '/#about'
   },
   {
     label: 'Skills',
-    link: '#skills'
+    link: '/#skills'
   }
   // {
   //   label: 'Experiences',

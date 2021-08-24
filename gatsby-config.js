@@ -58,7 +58,7 @@ const gatsbyConfigPlugins = [
       resolve: `gatsby-plugin-s3`,
       options: {
         bucketName: process.env.GATSBY_S3_BUCKET_NAME || 'develop',
-        region: process.env.GATSBY_S3_REGION || 'develop',
+        region: process.env.GATSBY_S3_REGION || 'us-east-2',
         enableS3StaticWebsiteHosting: true
       }
     },

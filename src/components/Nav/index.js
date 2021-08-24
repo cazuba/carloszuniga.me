@@ -27,7 +27,7 @@ const Header = ({ hash }) => {
     >
       <div className={clsx('container', `${theme}-mode`)}>
         <Navbar.Brand
-          href="#home"
+          href="/#home"
           className={clsx('font-weight-bold', styles.brand)}
           rel="alternate"
         >

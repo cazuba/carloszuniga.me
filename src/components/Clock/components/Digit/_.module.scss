@@ -1,0 +1,9 @@
+.digit {
+  margin-bottom: 10px;
+  min-width: 60px;
+  width: 60px;
+}
+
+.digit:not(:last-child) {
+  margin-right: 20px;
+}
