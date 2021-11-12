@@ -6,7 +6,7 @@ import DigitsGroup from '../DigitsGroup'
 import styles from './_.module.scss'
 
 const Clock = memo(({ days, hours, minutes, seconds }) => {
-  console.log({ days })
+
   return (
     <div className={styles.clockContainer}>
       {/* <div className={styles.clock} style={{ marginBottom: '20px' }}>

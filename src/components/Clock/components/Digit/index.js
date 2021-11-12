@@ -1,6 +1,5 @@
 import React, { memo } from 'react'
 import randomColor from 'randomcolor'
-import { arrayOf, number } from 'prop-types'
 
 import Segment from '../Segment'
 
@@ -25,9 +24,5 @@ const Digit = memo(({ data }) => {
     </div>
   )
 })
-
-Digit.propTypes = {
-  data: arrayOf([number]).isRequired
-}
 
 export default Digit

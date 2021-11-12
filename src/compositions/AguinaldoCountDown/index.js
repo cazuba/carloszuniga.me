@@ -26,7 +26,9 @@ const renderer = ({ days, hours, minutes, seconds, completed }) => {
     return <Completed />
   } else {
     // Render a countdown
-    return <Clock days={days} hours={hours} minutes={minutes} seconds={seconds} />
+    return (
+      <Clock days={days} hours={hours} minutes={minutes} seconds={seconds} />
+    )
   }
 }
 
