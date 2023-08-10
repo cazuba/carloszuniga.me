@@ -35,11 +35,11 @@ const Header = ({ hash }) => {
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="ml-auto">
+          <Nav className="ms-auto">
             {links.map(item => (
               <Nav.Link
                 className={clsx(
-                  'mr-4',
+                  'me-4',
                   hash === item.link ? styles.navItemActive : ''
                 )}
                 key={item.link}

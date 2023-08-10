@@ -9,9 +9,9 @@ html {
 }
 .dark-mode {
   background: rgba(0, 0, 0, 0.95);
-  color: var(--white);
+  color: var(--bs-white);
 
-  .badge.badge-primary {
+  .badge.bg-primary {
     background-color: $color-black;
     border-color: $color-primary-dark;
     color: $color-white;
@@ -19,7 +19,8 @@ html {
 }
 .light-mode {
   background: var(--light);
-  .badge.badge-primary {
+
+  .badge.bg-primary {
     background-color: $color-white;
     border-color: $color-primary;
     color: $color-black;
@@ -27,9 +28,8 @@ html {
 }
 .badge {
   cursor: default;
-  font-weight: 600;
 }
-.badge.badge-primary {
+.badge.bg-primary {
   border: 1px solid;
   font-size: 0.75rem;
   letter-spacing: 0.05rem;

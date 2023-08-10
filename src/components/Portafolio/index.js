@@ -1,6 +1,6 @@
 import React, { memo } from 'react'
 // import { useStaticQuery, graphql } from 'gatsby'
-// import Img from 'gatsby-image'
+// import { GatsbyImage } from 'gatsby-plugin-image'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 

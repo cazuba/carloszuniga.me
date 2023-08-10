@@ -7,6 +7,7 @@ import {
   faAws,
   faFacebook,
   faGithub,
+  faThreads,
   faHtml5,
   faLinkedinIn,
   faJs,
@@ -14,6 +15,8 @@ import {
   faPhp,
   faReact,
   faTwitter,
+  faXTwitter,
+  faInstagram,
   faVuejs
 } from '@fortawesome/free-brands-svg-icons'
 import {
@@ -39,6 +42,9 @@ library.add(
   faPhp,
   faReact,
   faTwitter,
+  faXTwitter,
+  faInstagram,
+  faThreads,
   faVuejs,
   // Solid
   faBiking,
@@ -61,13 +67,18 @@ const brands = [
   'php',
   'react',
   'twitter',
+  'x-twitter',
+  'threads',
+  'instagram',
   'vuejs'
 ]
 const Icon = memo(({ name, title, className }) => {
   const isBrand = brands.indexOf(name) !== -1
+  const prefix = isBrand ? 'fab' : 'fas';
+  console.log({ name, isBrand, classNames: 'fa-regular ' + prefix + name })
   return (
     <div className={clsx('icon', className)} title={title}>
-      <FontAwesomeIcon icon={[isBrand ? 'fab' : 'fas', name]} />
+      <FontAwesomeIcon icon={[prefix, name]} />
     </div>
   )
 })

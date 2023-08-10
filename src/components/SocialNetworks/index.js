@@ -13,9 +13,11 @@ const SocialNetworks = memo(() => {
       site {
         siteMetadata {
           role
-          github
-          linkedin
-          twitter
+          social {
+            icon
+            title
+            url
+          }
           email
           emailDisplay
           phone
@@ -24,20 +26,23 @@ const SocialNetworks = memo(() => {
           locationDisplay
         }
       }
-      placeholderImage: file(relativePath: { eq: "profile-photo.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 400) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
     }
   `)
+  const {
+    email,
+    emailDisplay,
+    phone,
+    phoneDisplay,
+    location,
+    locationDisplay,
+    social
+  } = data.site.siteMetadata
+
   return (
     <>
       <Col xs={12} className="d-flex flex-column align-items-start mt-2 mb-4">
         <TextLink
-          to={show.email ? data.site.siteMetadata.email : '#/'}
+          to={show.email ? email : '#/'}
           className="d-flex"
           rel="author"
           onClick={event => {
@@ -47,12 +52,12 @@ const SocialNetworks = memo(() => {
             }
           }}
         >
-          <Icon name="envelope" className="mr-3" />
-          {show.email ? data.site.siteMetadata.emailDisplay : 'Email me'}
+          <Icon name="envelope" className="me-3" />
+          {show.email ? emailDisplay : 'Email me'}
         </TextLink>
 
         <TextLink
-          to={show.phone ? `tel:${data.site.siteMetadata.phone}` : '#/'}
+          to={show.phone ? `tel:${phone}` : '#/'}
           className="d-flex"
           rel="noopener noreferrer"
           onClick={event => {
@@ -62,41 +67,30 @@ const SocialNetworks = memo(() => {
             }
           }}
         >
-          <Icon name="phone-alt" className="mr-3" />
-          {show.phone ? data.site.siteMetadata.phoneDisplay : 'Call me'}
+          <Icon name="phone-alt" className="me-3" />
+          {show.phone ? phoneDisplay : 'Call me'}
         </TextLink>
 
         <TextLink
-          to={data.site.siteMetadata.location}
+          to={location}
           rel="noopener noreferrer"
           target="_blank"
         >
-          <Icon name="map-marker-alt" className="mr-3" />
-          {data.site.siteMetadata.locationDisplay}
+          <Icon name="map-marker-alt" className="me-3" />
+          {locationDisplay}
         </TextLink>
       </Col>
       <Col xs={12} className="d-flex align-items-space-between">
-        <TextLink
-          to={data.site.siteMetadata.linkedin}
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          <Icon name="linkedin-in" className="mr-3" />
-        </TextLink>
-        <TextLink
-          to={data.site.siteMetadata.twitter}
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          <Icon name="twitter" className="mr-3" />
-        </TextLink>
-        <TextLink
-          to={data.site.siteMetadata.github}
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          <Icon name="github" className="mr-3" />
-        </TextLink>
+        {social && social.map(({ icon, title, url }) => (
+          <TextLink
+            key={icon}
+            to={url}
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <Icon name={icon} title={title} className="me-3" />
+          </TextLink>
+        ))}
       </Col>
     </>
   )

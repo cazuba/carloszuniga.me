@@ -1,6 +1,6 @@
 import React, { memo, useContext } from 'react'
 // import { useStaticQuery, graphql } from 'gatsby'
-// import Img from 'gatsby-image'
+// import { GatsbyImage } from 'gatsby-plugin-image'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Card from 'react-bootstrap/Card'
@@ -12,7 +12,7 @@ import { ThemeContext } from '@context/ThemeContext'
 import Section from '@components/Section'
 
 const Experiences = memo(() => {
-  const { theme } = useContext(ThemeContext)
+  const { theme, text } = useContext(ThemeContext)
   //   const data = useStaticQuery(graphql`
   //     query {
   //       placeholderImage: file(relativePath: { eq: "programming.png" }) {
@@ -29,7 +29,7 @@ const Experiences = memo(() => {
       <Row>
         <Col xs={12} sm={6}>
           Education
-          <Card bg={theme} className="mb-2">
+          <Card bg={theme} text={text} className="mb-2">
             <Card.Body>
               <Card.Title>Degree</Card.Title>
               <Card.Text>
@@ -38,7 +38,7 @@ const Experiences = memo(() => {
               </Card.Text>
             </Card.Body>
           </Card>
-          <Card bg={theme} className="mb-2">
+          <Card bg={theme} text={text} className="mb-2">
             <Card.Body>
               <Card.Title>Web Development</Card.Title>
               <Card.Text>
@@ -59,7 +59,7 @@ const Experiences = memo(() => {
         </Col>
         <Col xs={12} sm={6}>
           Work Experience
-          <Card bg={theme} className="mb-2">
+          <Card bg={theme} text={text} className="mb-2">
             <Card.Body>
               <Card.Title>Degree</Card.Title>
               <Card.Text>
@@ -68,7 +68,7 @@ const Experiences = memo(() => {
               </Card.Text>
             </Card.Body>
           </Card>
-          <Card bg={theme} className="mb-2">
+          <Card bg={theme} text={text} className="mb-2">
             <Card.Body>
               <Card.Title>Web Development</Card.Title>
               <Card.Text>
@@ -77,7 +77,7 @@ const Experiences = memo(() => {
               </Card.Text>
             </Card.Body>
           </Card>
-          <Card bg={theme} className="mb-2">
+          <Card bg={theme} text={text} className="mb-2">
             <Card.Body>
               <Card.Title>MTB</Card.Title>
               <Card.Text>

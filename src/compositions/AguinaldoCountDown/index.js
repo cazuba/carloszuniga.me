@@ -39,8 +39,8 @@ const AguinaldoCountDown = () => {
     decemberFirst = Date.now()
   }
   return (
-    <Section margin={5}>
-      <Section marginTop={1}>
+    <Section>
+      <Section>
         <Countdown date={decemberFirst} renderer={renderer} />
       </Section>
     </Section>

@@ -1,6 +1,6 @@
 import React, { memo, useContext } from 'react'
 // import { useStaticQuery, graphql } from 'gatsby'
-// import Img from 'gatsby-image'
+// import { GatsbyImage } from 'gatsby-plugin-image'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Card from 'react-bootstrap/Card'
@@ -12,7 +12,7 @@ import { ThemeContext } from '@context/ThemeContext'
 import Section from '@components/Section'
 
 const Contact = memo(() => {
-  const { theme } = useContext(ThemeContext)
+  const { theme, text } = useContext(ThemeContext)
   // const data = useStaticQuery(graphql`
   //   query {
   //     placeholderImage: file(relativePath: { eq: "programming.png" }) {
@@ -29,7 +29,7 @@ const Contact = memo(() => {
       <Row className="mt-4">
         <Col xs={12}>Contact</Col>
         <Col>
-          <Card bg={theme}>
+          <Card bg={theme} text={text}>
             <Card.Body>
               <Card.Title>Address</Card.Title>
               <Card.Text>
@@ -40,7 +40,7 @@ const Contact = memo(() => {
           </Card>
         </Col>
         <Col>
-          <Card bg={theme}>
+          <Card bg={theme} text={text}>
             <Card.Body>
               <Card.Title>Email</Card.Title>
               <Card.Text>

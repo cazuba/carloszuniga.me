@@ -1,7 +1,7 @@
 import React, { memo, useContext } from 'react'
 import clsx from 'clsx'
 import { useStaticQuery, graphql } from 'gatsby'
-import Img from 'gatsby-image'
+import { GatsbyImage } from 'gatsby-plugin-image'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Card from 'react-bootstrap/Card'
@@ -18,7 +18,7 @@ import Icon from '@components/Icon'
 import styles from './_.module.scss'
 
 const About = memo(() => {
-  const { theme } = useContext(ThemeContext)
+  const { theme, text } = useContext(ThemeContext)
   const data = useStaticQuery(graphql`
     query {
       site {
@@ -29,15 +29,13 @@ const About = memo(() => {
       }
       placeholderImage: file(relativePath: { eq: "programming.png" }) {
         childImageSharp {
-          fluid(maxWidth: 400) {
-            ...GatsbyImageSharpFluid
-          }
+          gatsbyImageData
         }
       }
     }
   `)
   const { hashtags, bio } = (data && data.site && data.site.siteMetadata) || {
-    bio: '',
+    bio: [],
     hashtags: []
   }
   return (
@@ -45,19 +43,22 @@ const About = memo(() => {
       <Row className="py-5 mb-5">
         <Col xs={12} sm={6}>
           <div>
-            <Img fluid={data.placeholderImage.childImageSharp.fluid} />
+            <GatsbyImage image={data.placeholderImage.childImageSharp.gatsbyImageData} />
           </div>
         </Col>
         <Col xs={12} sm={6} className="direction-column">
           <div>
             <h3 className="pb-4">About me</h3>
-            <p>{bio}</p>
+            {bio.map((content, index) => <p key={`bio-content-${index}`}>{content}</p>)}
           </div>
           <div className="my-4">
             {hashtags.map((tag, index) => (
               <Badge
                 variant="primary"
-                className="py-2 px-3 mx-1 mb-2 "
+                className={clsx(
+                  'py-2 px-3 mx-1 mb-2 fw-semibold',
+                  theme === 'dark' ? 'bg-dark' : 'bg-light'
+                  )}
                 key={index}
               >
                 {tag}
@@ -66,14 +67,14 @@ const About = memo(() => {
           </div>
         </Col>
       </Row>
-      <Row className="py-5 mt-3 mb-4" id="passion">
+      <Row className="py-5 mt-3 mb-4" id="styles.passion">
         <Col xs={12}>
           <h3 className="text-center pb-4">My passion</h3>
         </Col>
       </Row>
       <Row>
         <Col className="d-flex">
-          <Card bg={theme} className={styles.passion}>
+          <Card bg={theme} text={text} className={styles.passion}>
             <Card.Body>
               <Icon
                 className={clsx('text-success', 'mt-2', styles.passionIcon)}
@@ -90,7 +91,7 @@ const About = memo(() => {
           </Card>
         </Col>
         <Col className="d-flex">
-          <Card bg={theme} className={styles.passion}>
+          <Card bg={theme} text={text} className={styles.passion}>
             <Card.Body>
               <Icon
                 className={clsx('text-warning', 'mt-2', styles.passionIcon)}
@@ -108,7 +109,7 @@ const About = memo(() => {
           </Card>
         </Col>
         <Col className="d-flex">
-          <Card bg={theme} className={styles.passion}>
+          <Card bg={theme} text={text} className={styles.passion}>
             <Card.Body>
               <Icon
                 className={clsx(

@@ -1,5 +1,6 @@
-import React, { useState } from 'react'
+import React, { useState, useMemo } from 'react'
 import { any } from 'prop-types'
+
 
 export const DARK_MODE = 'dark'
 export const LIGHT_MODE = 'light'
@@ -11,8 +12,9 @@ export const ThemeProvider = ({ children }) => {
   function toggleTheme() {
     setTheme(prevState => (prevState === DARK_MODE ? LIGHT_MODE : DARK_MODE))
   }
+  const text = useMemo(() => theme === DARK_MODE ? LIGHT_MODE : DARK_MODE, [theme]);
   return (
-    <ThemeContext.Provider value={{ theme, toggleTheme }}>
+    <ThemeContext.Provider value={{ theme, text, toggleTheme }}>
       {children}
     </ThemeContext.Provider>
   )
