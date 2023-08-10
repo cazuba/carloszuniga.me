@@ -32,7 +32,7 @@
     "test"
   ],
   "scripts": {
-    "build": "npx -n \"-r dotenv/config\" gatsby build",
+    "build": "npx --node-options='-r dotenv/config' gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write src/**/*.{js,jsx}",
     "start": "npm run develop",
@@ -44,7 +44,7 @@
     "test:w": "jest --watch -u",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "deploy": "npx -n \"-r dotenv/config\" gatsby-plugin-s3 deploy"
+    "deploy": "npx --node-options='-r dotenv/config' gatsby-plugin-s3 deploy"
   },
   "dependencies": {
     "bootstrap": "^5.3.1",

@@ -8,7 +8,7 @@ import styles from './_.module.scss'
 const Footer = memo(() => {
   return (
     <Container as="footer" className={clsx('py-5', 'text-center', styles.footer)}>
-      <span>All right reserved Carlos Zúñiga @ {new Date().getFullYear()}</span>
+      <span>All rights reserved Carlos Zúñiga @ {new Date().getFullYear()}</span>
     </Container>
   )
 })
