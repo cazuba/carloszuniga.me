@@ -48,6 +48,7 @@ const SocialNetworks = memo(() => {
           onClick={event => {
             if (!show.email) {
               event.preventDefault()
+              window.gtag("event", "click", { event_name: 'contact', contact_via: 'email' })
               setShow(prevState => ({ ...prevState, email: true }))
             }
           }}
@@ -63,6 +64,7 @@ const SocialNetworks = memo(() => {
           onClick={event => {
             if (!show.phone) {
               event.preventDefault()
+              window.gtag("event", "click", { event_name: 'contact', contact_via: 'celphone' })
               setShow(prevState => ({ ...prevState, phone: true }))
             }
           }}
@@ -75,6 +77,7 @@ const SocialNetworks = memo(() => {
           to={location}
           rel="noopener noreferrer"
           target="_blank"
+          onClick={() => window.gtag("event", "click", { event_name: 'contact', contact_via: 'location' })}
         >
           <Icon name="map-marker-alt" className="me-3" />
           {locationDisplay}
